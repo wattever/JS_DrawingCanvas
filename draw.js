@@ -139,9 +139,8 @@ $(document).ready(function() {
         var posX = e.pageX - position.left;
         var posY = e.pageY - position.top;
         //var posY = ($(this).height()) - posY;
-        console.log(posX + ' ' + posY);
+        console.log("x = "+posX + ' | y = ' + posY);
 
-        console.log('appelé');
         colorizePxl(posX, posY, color);
     }
     /*
@@ -149,13 +148,14 @@ $(document).ready(function() {
      */
 
     function colorizePxl(x, y, color) {
-        ctx.beginPath();      // Début du chemin
-        ctx.moveTo(x, y);    // Le tracé part du point x,y
-        ctx.lineTo(x, y);   // Puis on trace jusqu'à x,y
-        ctx.lineWidth = 5;         // Définition de la largeur 
+    
+        //ctx.beginPath();      // Debut du chemin
+        //ctx.moveTo(x-10, y+10);    // Le trace part du point x,y
+        //ctx.lineTo(x, y);   // Puis on trace jusqua� x,y
+        ctx.lineWidth = 9;         // Definition de la largeur 
 
-        ctx.closePath();    //fermeture du tracé
-        ctx.strokeStyle = color; // Définition de la couleur de contour
-        ctx.stroke();   //on déclenche le tracé
+        //ctx.closePath();    //fermeture du trace
+        ctx.fillStyle = color; // Definition de la couleur de contour
+        ctx.fillRect((x-3),(y-3),6,6);   //on declenche le trace
     }
 });
